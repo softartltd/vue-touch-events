@@ -2,6 +2,7 @@
  *
  * @author    Jerry Bendy
  * @since     4/12/2017
+ * @fix softart
  */
 
 function touchX (event) {
@@ -60,7 +61,7 @@ var vueTouchEvents = {
       $this.currentY = 0
 
       $this.touchStartTime = event.timeStamp
-      $this.longtapTimeout = setTimeout(() => {
+      $this.longtapTimeout = setTimeout(function () {
         triggerEvent(event, this, 'longtap')
       }, options.longTapTimeInterval)
     }
