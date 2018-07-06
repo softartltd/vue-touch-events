@@ -61,9 +61,10 @@ var vueTouchEvents = {
       $this.currentY = 0
 
       $this.touchStartTime = event.timeStamp
-      $this.longtapTimeout = setTimeout(function () {
-        triggerEvent(event, this, 'longtap')
-      }, options.longTapTimeInterval)
+      $this.longtapTimeout = setTimeout(
+        triggerEvent.bind(this, event, this, 'longtap'),
+        options.longTapTimeInterval
+      )
     }
 
     function touchMoveEvent (event) {
